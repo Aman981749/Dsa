@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>search through array </title>
+</head>
+<body>
+
+    <form id="comon">
+        <h1>Array = [23,55,21,633,86,9] </h1>
+
+        <input type="number" placeholder="input number to find" id="number">
+        <input type="submit" value="search">
+    </form>
+    <h1 id="search-value"></h1>
+
+    <script>
+        let arr=[23,55,21,633,86,9]
+
+        document.getElementById('comon').addEventListener('submit',(e)=>{
+            e.preventDefault()
+            const input=parseInt(document.getElementById("number").value)
+            const value= document.getElementById('search-value')
+             let found;
+            for(let i=0;i<arr.length;i++){
+                if(arr[i]==input){
+                    found=true;
+                    value.innerHTML=`yes number ${arr[i]} is avaivable on array list`
+                    break;
+                }
+                        
+                
+            }
+            if(!found){
+                   value.innerHTML=`not found`
+            }
+          
+        })
+
+
+
+    </script>
+    
+</body>
+</html>
