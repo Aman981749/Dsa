@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+     
+
+    <script>
+     let arr=[23,45,22,5,40,86,93]
+
+     function findindexx(){
+
+     let num=document.getElementById('number').value
+     num=parseInt(num)
+
+     if(num>= arr.length){
+        alert("number excessds list")
+     }else if(isNaN(num)){
+        alert("please enter number")
+
+     }else if(num < 0){
+        alert("please enter positive number")
+
+     }else{
+        alert("the number is "+ arr[num])
+     }
+    }
+    </script>
+    <h3>This is array</h3>
+    <h2>[23,45,22,5,40,86,93] </h2>
+    <h6>one more thing remember index is arr.length-1 and it starts from 0 so 2nd element will be 3rd for eg 2nd elemet is 22 cuz indexing is 0 1 2 </h6>
+  <input type="text" id="number" placeholder="input index of array">
+  <input value="submit"  type="button"  onclick="findindexx()">
+
+    
+</body>
+</html>
