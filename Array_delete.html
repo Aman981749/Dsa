@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Delete elemenet</title>
+</head>
+<body>
+      <h4>REMEMBER POSITION IS N-1 IF YOU CHOOSE 3RD ELEMENT TO REMOVE ENTER 2 INDEX IS 2 LENGTH IS 3</h4>
+      <h1>Array =  [34,56,89,76,25,95,74]</h1>
+    <form id="form-id">
+        <input type="number" placeholder="position to delete" id="Position">
+        <input type="submit" value="Delete">
+
+
+    </form>
+    <h1 id="result"></h1>
+
+    <script>
+        let arr= [34,56,89,76,25,95,74]
+
+        // let position = 3
+        // console.log(arr)
+
+        // for(let i=position;i<arr.length-1;i++){
+        //     arr[i]= arr[i+1]
+        // }
+        // arr.length= arr.length-1
+
+        // console.log(arr)
+
+
+        let position= document.getElementById("form-id").addEventListener('submit',(e)=>{
+            e.preventDefault()
+            const position =parseInt(document.getElementById('Position').value)
+            const result = document.getElementById("result")
+
+            for(let i=position;i<arr.length-1;i++){
+                arr[i]=arr[i+1]
+            }
+            arr.length=arr.length-1
+
+            result.innerHTML=` new Array :${arr}`
+
+        })
+        
+
+    </script>
+    
+</body>
+</html>
