@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>\
+
+    <script>
+
+        let arr=[2,8,12,18,29,30,70,120]
+
+        let start=0
+        let end=arr.length-1
+        let position=undefined
+        let find=7
+
+        function recursive(data,start,end){
+
+            if (start > end) {
+                // If start exceeds end, the number is not in the array
+                alert("Number does not exist");
+                return false;
+            }
+
+            const mid= Math.floor((start+end)/2)
+
+            if(arr[mid] == find ){
+                position = mid
+                return true
+            }else if(arr[mid]< find){
+                recursive(arr,mid+1,end)
+            }else if (arr[mid]> find){
+                recursive(arr,start,mid-1)
+            }
+
+        }
+
+        recursive(arr,start,end)
+
+        console.log(position)
+
+
+
+
+    </script>
+    
+</body>
+</html>
