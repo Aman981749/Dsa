@@ -1,0 +1,52 @@
+<html>
+  <head>
+    <title>Reverse String with Stack in JavaScript</title>
+    <script>
+     let data =[];
+	 let currentSize=data.length;
+
+     function push(val){
+        data[currentSize]=val
+        currentSize++
+     }
+
+    
+
+     
+     
+     function pop(){
+         const lastitem= data[currentSize-1]
+         currentSize--
+         data.length=currentSize
+         
+         return lastitem
+         
+        }
+        
+        
+        function reverse(item){
+            
+            for(let i=0; i<item.length;i++){
+                push(item[i])
+            }
+            for(let i=0;i< item.length;i++){
+                item[i]=pop()
+            }
+        }
+        
+        let str='Aman'
+             str=str.split('')
+              reverse(str)
+               console.log(str)
+	
+	
+
+
+
+
+    </script>
+  </head>
+  <body>
+    <h1>Reverse String with Stack in JavaScript</h1>
+  </body>
+</html>

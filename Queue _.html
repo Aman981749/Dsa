@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=
+    , initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+
+    <script>
+
+        let arr=[]
+
+        let currentSize= arr.length
+        let max=5
+        // console.log(arr.length)
+
+
+       function queue(){
+        const val=document.getElementById('inputbox').value
+
+        if(arr.length>max){
+            alert("excedded max limit")
+        }else{
+
+
+            arr[arr.length]=val
+            currentSize++
+            displayAll()
+            document.getElementById('inputbox').value=''
+
+        }
+    
+       }
+
+
+       function deque(){
+
+        if(isFalse()){
+
+            for(let i=0 ; i<arr.length;i++){
+               arr[i]=arr[i+1]
+            }
+    
+            currentSize--
+            arr.length = currentSize
+            displayAll()
+           }else{
+            alert("queue is empty")
+           }
+
+
+        }
+
+     
+
+
+
+       function isFalse(){
+        if(currentSize>0){
+            return true
+        }else{
+            return false
+        }
+
+
+       }
+
+       function Rear(){
+        if(isFalse()){
+           
+        const rear=document.getElementById('rearval')
+        rear.innerHTML=`first is ${arr[0]}`
+           
+        }
+
+       }
+
+       function End(){
+          if (isFalse){
+            const end=document.getElementById('endval')
+            end.innerHTML=`last is ${arr[arr.length-1]}`
+           
+          }
+       }
+
+       function displayAll(){
+           const stack=  document.getElementById('array')
+           stack.innerHTML=`Stack ${arr.join(',')}`
+
+       }
+
+
+
+
+       
+
+
+
+
+
+    </script>
+
+    <h1 id="array"> </h1>
+    <input id="inputbox" type="text">
+    <button onclick="queue()">add element</button>
+    <button onclick="deque()">remove first element</button>
+    <br>
+    <button onclick="Rear()">show first element</button>
+    <button onclick="End()">show last element</button>
+    <div id="rearval"></div>
+    <div id="endval"></div>
+
+    
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+
+
+      let arr=[3,5,18,29,30]
+
+      let start=0
+      let find=29
+      let end= arr.length-1
+      let position=undefined
+
+
+
+      while(start<=end){
+
+        let mid= Math.floor((start + end) /2)
+
+        if(arr[mid]==find){
+            position = mid
+            break;
+
+        }else if( arr[mid] < find){
+            start = mid +1
+        }else if( arr[mid] > find){
+            end = mid -1
+        }
+
+      }
+
+      console.log(position)
+
+
+
+    </script>
+    
+</body>
+</html>

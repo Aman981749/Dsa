@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <h1 id="display">stack</h1>
+
+    <input type="text" id="addvalue">
+    <button id="add" onclick="addvalue()">add value</button>
+
+    <button onclick="removevalue()">remove</button>
+
+    
+
+
+
+
+    <script>
+
+        let arr=[]
+        
+        let limit =5
+
+        let currentlength=arr.length
+
+        function updatedisplay(){
+          const display=  document.getElementById('display')
+          display.innerHTML=`stack : ${arr.join(',')} `
+        }
+
+
+
+        function push(newval){
+        if(currentlength>= limit){
+       alert("stack overload please remove " + newval)
+        }else{
+            arr[currentlength]=newval
+            currentlength+=1
+        }
+        
+    }
+    
+    function pop(){
+        
+        if(currentlength > 0){
+            currentlength-=1
+            arr.length=currentlength
+        }else{
+            alert("you stack is already empty")
+        }
+        
+        
+    }
+    
+    
+    
+    function addvalue(){
+        const add =  document.getElementById('addvalue').value
+        push(add)
+        document.getElementById('addvalue').value=''
+        updatedisplay()
+
+        }
+
+        function removevalue(){
+            pop()
+            updatedisplay()
+        }
+
+        // document.getElementById('display')
+
+        console.log(arr)
+        
+        
+       
+
+
+
+
+
+    </script>
+    
+</body>
+</html>
